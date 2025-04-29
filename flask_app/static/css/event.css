@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.date-range {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #475569;
+}
+
+.best-time {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.mode-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-select label {
+    font-weight: 600;
+}
+
+.mode-select select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+}
+
+.back-form {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-decoration: underline;
+}
+
+.back-btn:hover {
+    color: #1d4ed8;
+}
+
+.availability-grid {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background-color: #f9fafb;
+}

@@ -1,0 +1,37 @@
+<!-- /exam/flask_app/templates/join_event.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Existing Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/join_event.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Join an Existing Event</h1>
+
+        {% if events %}
+            <ul class="event-list">
+                {% for event in events %}
+                    <li class="event-card">
+                        <div class="event-details">
+                            <h2>{{ event.title }}</h2>
+                            <p><span>By:</span> {{ event.creator }}</p>
+                            <p><span>Date:</span> {{ event.start_date }} → {{ event.end_date }}</p>
+                            <form method="GET" action="/event/{{ event.event_id }}">
+                                <button type="submit" class="open-btn">Open Event</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-events">You have no invited events.</p>
+        {% endif %}
+
+        <form action="/dashboard" method="get" class="back-form">
+            <input type="submit" value="Back to Dashboard" class="back-btn">
+        </form>
+    </div>
+</body>
+</html>

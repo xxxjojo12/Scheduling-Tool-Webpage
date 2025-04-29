@@ -1,0 +1,50 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f8fa;
+    color: #1f2937;
+    margin: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+button {
+    background: #ef4444;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
+}

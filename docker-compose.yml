@@ -1,0 +1,45 @@
+# Author  : Prof. MM Ghassemi <ghassem3@msu.edu>
+
+version: "3.8"
+services:
+  # A user-defined name for this container
+  flask-app:
+    container_name: exam-container_flask-app
+    # Indicates that `Dockerfile-dev` should be used for local instantiations
+    build:
+        context: .
+        dockerfile: Dockerfile-dev
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    # Mounts the local directory to docker container as a volume.
+    volumes:
+      - .:/app
+      
+    environment:
+      - DB_HOST=db
+      - DB_HOST=34.122.131.134
+      - DB_USER=appuser
+      - DB_PASSWORD=password
+      - DB_NAME=db
+    depends_on:
+      - db
+
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: exam-container_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

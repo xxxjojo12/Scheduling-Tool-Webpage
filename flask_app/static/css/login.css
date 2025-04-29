@@ -1,0 +1,102 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Layout */
+body {
+  background: linear-gradient(120deg, #f0f4ff, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+/* Card */
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* Form Elements */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+/* Error Message */
+.error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+}

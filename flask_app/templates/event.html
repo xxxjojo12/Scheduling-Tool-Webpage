@@ -1,0 +1,61 @@
+<!-- /exam/flask_app/templates/event.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ event.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/event.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ event.title }}</h1>
+        <p class="date-range"><strong>Date:</strong> {{ event.start_date }} → {{ event.end_date }}</p>
+
+        <div id="best-time" class="best-time"></div>
+
+        <div class="mode-select">
+            <label for="mode">Availability:</label>
+            <select id="mode">
+                <option value="available">Available</option>
+                <option value="maybe">Maybe</option>
+                <option value="unavailable">Unavailable</option>
+            </select>
+        </div>
+
+        <div id="grid"
+             class="availability-grid"
+             data-start-date="{{ event.start_date }}"
+             data-end-date="{{ event.end_date }}"
+             data-start-time="{{ event.start_time_str }}"
+             data-end-time="{{ event.end_time_str }}">
+        </div>
+
+        <form action="/dashboard" method="get" class="back-form">
+            <input type="submit" value="Back to Dashboard" class="back-btn">
+        </form>
+    </div>
+
+    <!-- socket.io client -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+    <!-- our app's script -->
+    <script defer src="{{ url_for('static', filename='js/grid.js') }}"></script>
+    <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+        const eventId = window.location.pathname.split("/").pop();
+        fetch(`/api/best_time/${eventId}`)
+            .then(res => res.json())
+            .then(data => {
+                const bestTimeEl = document.getElementById("best-time");
+                if (data.success) {
+                    bestTimeEl.textContent = `Best Time to Meet: ${data.day} at ${data.time}`;
+                } else {
+                    bestTimeEl.textContent = `Best Time to Meet: ${data.message}`;
+                }
+            })
+            .catch(err => console.error("Error fetching best time:", err));
+    });
+    </script>
+</body>
+</html>

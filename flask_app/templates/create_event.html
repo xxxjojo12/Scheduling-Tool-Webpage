@@ -1,0 +1,40 @@
+<!-- /exam/flask_app/templates/create_event.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_event.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Event</h1>
+
+        <form method="POST" action="/create_event" class="form">
+            <label>Event Name</label>
+            <input type="text" name="title" required>
+
+            <label>Start Date</label>
+            <input type="date" name="start_date" required>
+
+            <label>End Date</label>
+            <input type="date" name="end_date" required>
+
+            <label>Start Time</label>
+            <input type="time" name="start_time" required>
+
+            <label>End Time</label>
+            <input type="time" name="end_time" required>
+
+            <label>Invitee Emails (comma-separated)</label>
+            <input type="text" name="invitees" required>
+
+            <input type="submit" value="Create Event" class="submit-btn">
+        </form>
+
+        <form action="/dashboard" method="get" class="back-form">
+            <input type="submit" value="Back to Dashboard" class="back-btn">
+        </form>
+    </div>
+</body>
+</html>

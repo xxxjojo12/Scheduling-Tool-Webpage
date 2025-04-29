@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 3rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #0f172a;
+}
+
+.form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="time"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    background: #f1f5f9;
+    transition: border-color 0.3s;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #2563eb;
+}
+
+.back-form {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #3b82f6;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-decoration: underline;
+}
+
+.back-btn:hover {
+    color: #1d4ed8;
+}

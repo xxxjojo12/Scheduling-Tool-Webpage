@@ -1,0 +1,33 @@
+/* /exam/flask_app/static/css/grid.css */
+
+.grid {
+    display: grid;
+    border: 1px solid #ccc;
+    user-select: none;
+    margin-top: 20px;
+}
+
+.grid-cell {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid-cell.header {
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+.available {
+    background-color: #a8e6a3;
+}
+
+.maybe {
+    background-color: #ffe680;
+}
+
+.unavailable {
+    background-color: #eee;
+}
